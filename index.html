@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Ice Cream Parlor</title>
+</head>
+
+<body>
+  <header></header>
+
+  <main class="container-fluid">
+    <section class="row">
+
+
+      <!-- *!SECTION cart -->
+      <div class="col-6 p-4">
+
+        <!-- *NOTE - using a row split this col-6 into 12 more bootstrap units -->
+        <div class="h-100 d-flex flex-column justify-content-between bg-white ">
+          <div class=" col-12">
+            <div>
+              <div class="d-flex p-3 fs-2 justify-content-between text-primary">
+                <p class="p-4">Name</p>
+                <p class="p-4">Qty</p>
+                <p class="p-4">Each</p>
+                <p class="p-4">Total</p>
+              </div>
+
+              <ul id="cart" class="px-5 fs-3">
+                <!-- this will be in my JS instead once drawn with JS, using for testing&understanding -->
+                <!-- <li>
+                  <div class="d-flex fs-3 justify-content-between">
+                    <span>Strawberry</span>
+                    <span>2</span>
+                    <span>$4 ea</span>
+                    <span>$8 total</span>
+                  </div>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+
+          <div class="d-flex flex-column p-3 fs-2 justify-content-end align-items-end ">
+            <p class="p-4">TOTAL: $<san id="cartTotal">0</san>
+            </p>
+            <button onclick="checkOut()" class="btn btn-primary ps-4 pe-4">Pay </button>
+          </div>
+
+        </div>
+
+      </div>
+      </div>
+
+
+
+      <!-- *!SECTION menu -->
+      <div class="col-6  p-4">
+
+        <!-- *NOTE - using a row split this col-6 into 12 more bootstrap units -->
+        <div class="row ">
+
+          <h1>Toppings</h1>
+
+          <div class="col-4 p-4  ">
+            <div onclick="addItemsToCart('Sprinkles', 'toppings')" class="card bg-white p-4">
+              <img
+                src="https://images.unsplash.com/photo-1516746924755-babd21844370?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                class="menu-img" alt="sprinkles">
+              <p class="fs-4 text-center">Sprinkles $2</p>
+            </div>
+          </div>
+          <div class="col-4 p-4 ">
+            <div onclick="addItemsToCart('Chocolate Chips', 'toppings')" class="card bg-white p-4">
+              <img
+                src="https://images.unsplash.com/photo-1585502866757-30ae9e509e31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                class="menu-img" alt="choc chips">
+              <p class="fs-4 text-center">Chocolate Chips $3</p>
+            </div>
+          </div>
+          <div class="col-4 p-4 ">
+            <div onclick="addItemsToCart('Gummy Worms', 'toppings')" class="card bg-white p-4">
+              <img
+                src="https://images.unsplash.com/photo-1499195333224-3ce974eecb47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1051&q=80"
+                class="menu-img" alt="gummy worms">
+              <p class="fs-4 text-center">Gummy Worms $2</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Vessels -->
+
+        <div class="row ">
+
+          <h1>Vessels</h1>
+
+          <div class="col-4 p-4  ">
+            <div onclick="addItemsToCart('Waffle Cone', 'containers')" class="card bg-white p-4">
+              <img src="https://m.media-amazon.com/images/I/71VNjBMakfL._SL1500_.jpg" class="menu-img" alt="sprinkles">
+              <p class="fs-4 text-center">Waffle Cone $3</p>
+            </div>
+          </div>
+          <div class="col-4 p-4 ">
+            <div onclick="addItemsToCart('Waffle Bowl', 'containers')" class="card bg-white p-4">
+              <img src="http://images.wbmason.com/350/L_JOY66050.jpg" class="menu-img" alt="choc chips">
+              <p class="fs-4 text-center">Waffle Bowl $4</p>
+            </div>
+          </div>
+          <div class="col-4 p-4 ">
+
+            <div onclick="addItemsToCart('Dipped Cone', 'containers')" class="card bg-white p-4">
+              <img
+                src="https://images.unsplash.com/photo-1569429378981-f4c5ba689a9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1331&q=80"
+                class="menu-img" alt="gummy worms">
+              <p class="fs-4 text-center">Dipped Cone $5</p>
+            </div>
+
+          </div>
+        </div>
+        <div id="iceCream" class="row ">
+
+          <!-- ice cream -->
+
+          <h1>Ice Cream</h1>
+
+          <div class="col-4 p-4  ">
+            <div onclick="addItemsToCart('Waffle Cone', 'containers')" class="card bg-white p-4">
+              <img src="https://m.media-amazon.com/images/I/71VNjBMakfL._SL1500_.jpg" class="menu-img" alt="sprinkles">
+              <p class="fs-4 text-center">Vanilla $3</p>
+            </div>
+          </div>
+          <div class="col-4 p-4 ">
+            <div onclick="addItemsToCart('Waffle Bowl', 'containers')" class="card bg-white p-4">
+              <img src="http://images.wbmason.com/350/L_JOY66050.jpg" class="menu-img" alt="choc chips">
+              <p class="fs-4 text-center">Chocolate $4</p>
+            </div>
+          </div>
+          <div class="col-4 p-4 ">
+
+            <div onclick="addItemsToCart('Dipped Cone', 'containers')" class="card bg-white p-4">
+              <img
+                src="https://images.unsplash.com/photo-1569429378981-f4c5ba689a9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1331&q=80"
+                class="menu-img" alt="gummy worms">
+              <p class="fs-4 text-center">Cookie Dough $4.50</p>
+            </div>
+
+          </div>
+        </div>
+
+
+    </section>
+  </main>
+
+
+
+  <footer></footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
